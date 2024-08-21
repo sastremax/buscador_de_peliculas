@@ -5,6 +5,7 @@ function App() {
   // Definir el estado para almacenar el término de búsqueda
   const [consulta, setConsulta] = useState('');
   const [peliculas, setPeliculas] = useState([]);
+  const [ultimaConsulta, setUltimaConsulta] = useState('');  // Almacena la última búsqueda
 
   const API_KEY = '1e8ca98c';
 
@@ -19,6 +20,8 @@ function App() {
                         // para evitar que la pagina se recargue
     if (consulta.trim() === '') return;  // Verifica que el input no esté vacío
   
+    if (consulta === ultimaConsulta) return;  // Evita hacer la misma búsqueda dos veces seguidas
+
     const URL = `http://www.omdbapi.com/?s=${consulta}&apikey=${API_KEY}`;
   
     try {
@@ -29,6 +32,7 @@ function App() {
       } else {
         setPeliculas([]);  // Limpia los resultados si no hay coincidencias
       }
+      setUltimaConsulta(consulta);  // Actualiza la última búsqueda
     } catch (error) {
       console.error('Error al buscar una pelicula:', error);
     }
