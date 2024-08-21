@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {  
@@ -14,35 +14,33 @@ function App() {
     setConsulta(e.target.value);  // Actualizar el estado con el valor del input
   };
 
-  // funcion para manejar el envio del formulario
-  const buscarPeliculas = async (e) => {
-    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario 
-                        // para evitar que la pagina se recargue
-    if (consulta.trim() === '') return;  // Verifica que el input no esté vacío
-  
-    if (consulta === ultimaConsulta) return;  // Evita hacer la misma búsqueda dos veces seguidas
-
-    const URL = `http://www.omdbapi.com/?s=${consulta}&apikey=${API_KEY}`;
-  
-    try {
-      const respuesta = await fetch(URL);
-      const datos = await respuesta.json();
-      if (datos.Search) {
-        setPeliculas(datos.Search);   // Actualiza el estado con los resultados
-      } else {
-        setPeliculas([]);  // Limpia los resultados si no hay coincidencias
-      }
-      setUltimaConsulta(consulta);  // Actualiza la última búsqueda
-    } catch (error) {
-      console.error('Error al buscar una pelicula:', error);
+  useEffect(() => {
+    if (consulta.trim() !== '' && consulta !== ultimaConsulta) {   // Solo realiza la búsqueda si el término ha cambiado y no está vacío
+      const buscarPeliculas = async () => {   // funcion para manejar el envio del formulario
+        const URL = `http://www.omdbapi.com/?s=${consulta}&apikey=${API_KEY}`;
+      
+        try {
+          const respuesta = await fetch(URL);
+          const datos = await respuesta.json();
+          if (datos.Search) {
+            setPeliculas(datos.Search);   // Actualiza el estado con los resultados
+          } else {
+            setPeliculas([]);  // Limpia los resultados si no hay coincidencias
+          }
+          setUltimaConsulta(consulta);  // Actualiza la última búsqueda
+        } catch (error) {
+          console.error('Error al buscar una pelicula:', error);
+        }
+      };
+      buscarPeliculas();
     }
-  };
+  }, [consulta, ultimaConsulta, API_KEY]);  // Ejecutar cada vez que cambie la consulta
 
   return (    
     <div>
       <header>
         <h1>Buscador de Peliculas</h1>
-        <form className='form' onSubmit={buscarPeliculas}>
+        <form className='form' onSubmit={(e) => e.preventDefault()}>
           <input
             type='text'
             placeholder='Escribe el nombre de la pelicula...'
