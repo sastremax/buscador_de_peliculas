@@ -1,0 +1,76 @@
+{
+    "Search": [
+        {
+            "Title": "El Planeta",
+            "Year": "2021",
+            "imdbID": "tt12788368",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYjVlZWM2N2UtOWMzMC00NjgzLWEzNjktNjI3NGNlZjgwNjk3XkEyXkFqcGdeQXVyOTE2NTc3MjY@._V1_SX300.jpg"
+        },
+        {
+            "Title": "El planeta de los hippies",
+            "Year": "1999",
+            "imdbID": "tt0298502",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYTY0ZmJhYjktN2E4Ny00M2UxLWEwNzEtYTY1Y2JhMGY5ZDllXkEyXkFqcGdeQXVyMjQ0NzgwNzY@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Dos nacos en el planeta de las mujeres",
+            "Year": "1991",
+            "imdbID": "tt0289696",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZDUxYTUwOTMtNzMwMC00NzU0LTkwOGEtZDM3NmY2OTU3OTkwXkEyXkFqcGdeQXVyNDUxNjc5NjY@._V1_SX300.jpg"
+        },
+        {
+            "Title": "El planeta del terror",
+            "Year": "1972",
+            "imdbID": "tt0183654",
+            "Type": "movie",
+            "Poster": "N/A"
+        },
+        {
+            "Title": "El planeta de los niños",
+            "Year": "1992",
+            "imdbID": "tt1539142",
+            "Type": "movie",
+            "Poster": "N/A"
+        },
+        {
+            "Title": "Que hable el planeta",
+            "Year": "2009",
+            "imdbID": "tt2151777",
+            "Type": "movie",
+            "Poster": "N/A"
+        },
+        {
+            "Title": "El planeta lila",
+            "Year": "1992",
+            "imdbID": "tt2947778",
+            "Type": "movie",
+            "Poster": "N/A"
+        },
+        {
+            "Title": "El planeta Tierra eres tú",
+            "Year": "2013",
+            "imdbID": "tt4087238",
+            "Type": "movie",
+            "Poster": "N/A"
+        },
+        {
+            "Title": "El planeta de Berugo",
+            "Year": "1981–",
+            "imdbID": "tt4994082",
+            "Type": "series",
+            "Poster": "N/A"
+        },
+        {
+            "Title": "Estima el teu planeta",
+            "Year": "2008",
+            "imdbID": "tt5232638",
+            "Type": "movie",
+            "Poster": "N/A"
+        }
+    ],
+    "totalResults": "21",
+    "Response": "True"
+}
