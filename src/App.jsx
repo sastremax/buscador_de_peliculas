@@ -10,11 +10,18 @@ function App() {
     setConsulta(e.target.value);  // Actualizar el estado con el valor del input
   };
 
+  // funcion para manejar el envio del formulario
+  const buscarPeliculas = (e) => {
+    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario 
+                        // para evitar que la pagina se recargue
+    console.log(`Buscando peliculas con el termino: ${consulta}`);
+  };
+
   return (    
     <div>
       <header>
         <h1>Buscador de Peliculas</h1>
-        <form className='form'>
+        <form className='form' onSubmit={buscarPeliculas}>
           <input
             type='text'
             placeholder='Escribe el nombre de la pelicula...'
